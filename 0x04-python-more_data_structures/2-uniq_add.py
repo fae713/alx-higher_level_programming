@@ -1,11 +1,7 @@
-#!/usr/bin/bash
+#!/usr/bin/python3
 def uniq_add(my_list=[]):
-    uniq_add = set()
-    sum = 0
-
-    for num in my_list:
-        if num not in uniq_add:
-            sum += num
-            uniq_add.add(num)
-
-    return sum
+    new = set(my_list)
+    total = 0
+    for i in new:
+        total += i
+    return res
