@@ -1,8 +1,8 @@
 #!/usr/bun/python3
-"""This is the python interpreter"""
+"""This defines an empty class Rectangle"""
 
 
 class Rectangle:
-    """This defines a class called Rectangle"""
+    """This is a class that defines the properties of Rectangle"""
 
     pass
