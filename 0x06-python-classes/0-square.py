@@ -6,4 +6,3 @@ class Square:
     """This is a Square class that defines its properties"""
 
     pass
-print(Square)
