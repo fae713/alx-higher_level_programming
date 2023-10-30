@@ -6,7 +6,7 @@ class Square:
     """This class defines a square private instance"""
 
 
-def __init__(self, size):
-    """Create a new instances of the square"""
+    def __init__(self, size=None):
+        """Create a new instances of the square"""
 
-    self.__size = size
+        self.__size = size
