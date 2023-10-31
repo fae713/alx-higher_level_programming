@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This defines a class called Rectangle"""
+"""Define a class called Rectangle"""
 
 
 class Rectangle:
@@ -13,12 +13,12 @@ class Rectangle:
 
     @property
     def width(self):
-        """The getter property of Width"""
+        """The getter property of width"""
         return self.__width
 
     @property
     def height(self):
-        """The getter property of Height"""
+        """The getter property of height"""
 
         return self.__height
 
@@ -27,9 +27,9 @@ class Rectangle:
         """The setter property of width"""
 
         if type(value) is not int:
-            raise TypeError("Width must be an integer")
+            raise TypeError("width must be an integer")
         elif value < 0:
-            raise ValueError("Width must be >=0")
+            raise ValueError("width must be >=0")
         else:
             self.__width = value
 
@@ -38,8 +38,8 @@ class Rectangle:
         """The setter property of height"""
 
         if type(value) is not int:
-            raise TypeError("Height must be an integer")
+            raise TypeError("height must be an integer")
         elif value < 0:
-            raise ValueError("Height must be >=0")
+            raise ValueError("height must be >=0")
         else:
             self.__height = value
