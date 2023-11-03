@@ -1,11 +1,14 @@
 #!/usr/bin/python3
+"""0-add_integer Module """
+
+
 def add_integer(a, b=98):
-    """This defines a function that adds 2 integers
+    """This defines a function that adds two integers
 
         Args:
             a: a integer of float
             b: another integer or float
-        Returns:
+        Returnsi:
             addition of the integers """
 
     if type(a) is not int and type(a) is not float:
