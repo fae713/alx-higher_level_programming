@@ -13,7 +13,7 @@ def matrix_divided(matrix, div):
     returns:
         Divided elements of a matrix """
 
-    error_msg = "matrix must be a matrix(list of list) of integers/floats"
+    error_msg = "matrix must be a matrix (list of list) of integers/floats"
 
     if type(matrix) is not list:
         raise TypeError(error_msg)
