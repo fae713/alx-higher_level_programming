@@ -1,33 +1,35 @@
 #!/usr/bin/python3
-""" The 2-matrix_divided module"""
+""" The 2-matrix_divided Module """
 
 
 def matrix_divided(matrix, div):
-    """This defines function that divides all elements
-    of a matrix.
+    """
+        def matrix_divided(matrix, div)
 
-    Args:
-        matrix: a list of matrix that's either an integer or a float
-        div: a number (integer or float)
+        Args:
+            matrix: a list of lists of integers or floats
+            div: a number (integer or float)
 
-    returns:
-        Divided elements of a matrix """
-
-    error_msg = "matrix must be a matrix (list of list) of integers/floats"
+        Returns:
+            a new matrix
+    """
+    length = 0
+    err_msg = "matrix must be a matrix (list of lists) of integers/floats"
 
     if type(matrix) is not list:
-        raise TypeError(error_msg)
+        raise TypeError(err_msg)
 
-    for row in matrix:
-        if type(row) is not list:
-            raise TypeError(error_msg)
+    for block in matrix:    # matrix is a list
+        if type(block) is not list:
+            raise TypeError(err_msg)
 
-        for i in row:
-            if type(i) is not int and type(i) is not float:
-                raise TypeError(error_msg)
+        for element in block:
+            if type(element) is not int and type(element) is not float:
+                raise TypeError(err_msg)
 
-        if len(matrix[0]) != len(row):
-            raise TypeError("each row of the matrix must have the same size")
+        if len(block) != length and length != 0:
+            raise TypeError("Each row of the matrix must have the same size")
+        length = len(block)
 
     if type(div) is not int and type(div) is not float:
         raise TypeError("div must be a number")
@@ -35,4 +37,4 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    return [[round(i / div, 2) for i in row] for row in matrix]
+    return [[round(elem / div, 2) for elem in row] for row in matrix]
