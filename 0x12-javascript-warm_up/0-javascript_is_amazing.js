@@ -1,5 +1,8 @@
 #!/usr/bin/node
 // Create a constant variable called myVar
-const myVar = "JavaScript is amazing";
+function myFunc () {
+	const myVar = "JavaScript is amazing";
+	return myVar;
+}
 
-console.log(myVar);
+console.log(myFunc());
