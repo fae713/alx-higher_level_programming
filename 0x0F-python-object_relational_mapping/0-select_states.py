@@ -1,23 +1,28 @@
 #!/usr/bin/python3
 """
-The module declaration for a mysql connection that
-lists all states from the database hbtn_0e_0_usa.
+The module declaration for a MySQL connection that
+lists all unique states from the database hbtn_0e_0_usa.
 """
 
 import MySQLdb
 from sys import argv
 
 if __name__ == "__main__":
-    connection = MySQLdb.connect(host="127.0.0.1", port=3306,
-                                 user=argv[1], password=argv[2],
-                                 db=argv[3])
+    connection = MySQLdb.connect(host="localhost", port=3306,
+                                 user=argv[1], passwd=argv[2],
+                                 db=argv[3], charset="utf8")
 
     cursor = connection.cursor()
-    cursor.execute("SELECT * FROM states")
-    db = cursor.fetchall()
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
 
-    for i in db:
-        print(i)
+    # Use a set to store unique states
+    unique_states = set()
 
-    cursor.close
-    connection.close
+    for state in cursor.fetchall():
+        # Check if the state is not in the set before printing
+        if state[1] not in unique_states:
+            print(state)
+            unique_states.add(state[1])
+
+    cursor.close()
+    connection.close()
