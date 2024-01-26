@@ -5,9 +5,11 @@
 
 """
 
-if __name__ == "__main____":
+
+
+if __name__ == "__main__":
     import urllib.request
-    url = "https://alx-intranet.hbtn.io/status"
+    url = 'https://alx-intranet.hbtn.io/status'
     with urllib.request.urlopen(url) as response:
         read_body = response.read()
         print("Body response:")
