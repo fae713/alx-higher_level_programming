@@ -11,7 +11,9 @@ def find_peak(list_of_integers):
     end = len(list_of_integers)
     middle = ((end - start) // 2) + start
     middle = int(middle)
-    if end <= 2:
+    if end == 1:
+        return list_of_integers[0]
+    if end == 2:
         return max(list_of_integers)
     if list_of_integers[middle] >= list_of_integers[middle - 1] and\
             list_of_integers[middle] >= list_of_integers[middle + 1]:
